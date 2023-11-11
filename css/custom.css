@@ -1,0 +1,453 @@
+body {
+    background-color: #D7CEC7;
+    /* #fef7f8 */
+}
+
+::placeholder {
+    color: #ced4dac7;
+}
+
+/* dataset ID page */
+
+/* #dataSetIDDetails tr th,td{
+    color:black !important;
+} */
+/* data set table cover */
+@media only screen and (min-width: 1680px) {
+    .container {
+        max-width: 1640px;
+    }
+}
+
+.wrapper {
+    margin: 0 auto;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;*/
+    margin-top: 5%;
+}
+
+.cover {
+    width: 100%;
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .show{
+    display:flex;
+} */
+/* css for context menu */
+#menu {
+    position: absolute;
+    border: 1px solid black;
+    display: block;
+    background: white;
+    z-index: 11;
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 12px;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.contextMenu:hover {
+
+    cursor: pointer;
+    /* color: #f8d7da; */
+    /* background-color: #f8d7da;
+    border-color: #dae0e5; */
+}
+
+.contextMenu_focus {
+    box-shadow: 0 0 0 0.2rem rgb(108 117 125 / 50%);
+}
+
+.contextMenu {
+
+    position: relative;
+}
+
+.favorite {
+    background-color: #f8eced;
+}
+
+.descriptionForDC {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.favCover {
+    display: flex;
+    /* width: 50%; */
+}
+
+.favUnder {
+    width: 100%;
+}
+
+.maxIS {
+    position: relative;
+    width: 25%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.alignMiddle {
+    vertical-align: middle !important;
+}
+
+.maxIS p {
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+
+.verticalAlign {
+    vertical-align: middle !important;
+}
+
+.page-link {
+    color: #721c24;
+}
+
+
+/* navbar style */
+
+.nav-style {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav-item {
+    height: 43px;
+}
+
+.nav-item a {
+    font-weight: 500;
+    font-size: 19px;
+    color: #721c24 !important;
+}
+
+.nav-item a:hover {
+
+    border-bottom: 2px solid #f5c6cb;
+    /* color: #721c24 !important; */
+}
+
+#instanceTsSubmit {
+    margin-top: -4px;
+}
+
+#dataClassList,
+#jobBody {
+    border-bottom: 35px solid #D7CEC7;
+}
+
+.datasetHead {
+    list-style: none;
+    padding: 0;
+}
+
+.datasetHead li {
+    display: inline;
+    padding-right: 20px;
+
+}
+
+.otherBtn {
+    background: white;
+    color: #721c24;
+    border: 1px solid #721c24;
+}
+
+.otherBtn:hover {
+    background: #721c24;
+    color: white;
+    border: 1px solid #721c24;
+}
+
+
+/* setting page */
+.submitBtn {
+    background: none;
+    color: #721c24;
+    border: 1px solid #721c24;
+}
+
+.submitBtn:hover {
+    background: #721c24;
+    color: white;
+    border: 1px solid #721c24;
+}
+
+.form-control,
+.form-control:focus {
+    border: none;
+    box-shadow: none;
+    outline: 0 none;
+}
+
+.displayInline {
+    display: flex;
+    padding-bottom: 10px;
+
+}
+
+.displayInline label {
+    width: 13%;
+}
+
+/* add dataset */
+#selectFormFields {
+    display: flex;
+    justify-content: center;
+}
+
+#selectFormFields .form-check {
+    padding-right: 22px;
+}
+
+.hide {
+    display: none;
+}
+
+/* data set class model */
+#descriptionVal {
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+/* task page */
+.trSelected {
+    background: beige;
+}
+
+#table1 thead tr th {
+    vertical-align: middle;
+}
+
+#table1 input[type='checkbox'] {
+    cursor: pointer;
+    width: 19px;
+    transform: scale(1.5);
+}
+
+.taskReportPage {
+    cursor: pointer;
+}
+
+.justifyContent {
+    justify-content: space-around;
+}
+
+.justifyBetween {
+    justify-content: space-between;
+}
+
+.justifyEnd {
+    justify-content: end;
+}
+
+
+/* Context menu */
+.context-menu {
+    display: none;
+    position: absolute;
+    /* border: 1px solid black; */
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 3px;
+    min-width: 200px;
+    background: white;
+    z-index: 111;
+    /* box-shadow: 10px 10px 5px #888888; */
+}
+
+.context-menu ul {
+    list-style: none;
+    padding: 5px 0px;
+}
+
+.context-menu ul li {
+    text-align: left;
+    padding: 4px 30px 4px 30px;
+    margin-bottom: 0px;
+    font-weight: 400;
+
+}
+
+.context-menu ul li a {
+    color: #212529;
+    text-decoration: none;
+}
+
+.context-menu ul li.trel-menu-item:hover>a,
+.context-menu ul li.trel-menu-item:hover>p,
+.context-menu ul li.trel-menu-item:hover {
+    cursor: pointer;
+    background-color: #721c24;
+    color: white !important;
+}
+
+.menuBTN:target {
+    border: 2px solid #e7e7e7;
+}
+
+/* task report  */
+.tableBtn {
+    height: 40px !important;
+    background: white;
+    border: 1px solid;
+    padding-top: 3px !important;
+    padding-bottom: 4px;
+    min-width: 70px;
+}
+
+.tableBtn:focus,
+.tableBtn:hover {
+    box-shadow: 0 0 0 0.1rem #721c24;
+    background: #721c24;
+    color: white;
+}
+
+.favCover:hover * {
+    box-shadow: 0 0 0 0.1rem #721c24;
+    background: #721c24;
+    color: white !important;
+}
+
+.increaseWidth {
+    width: 100px;
+    height: 40px;
+}
+
+#inputDatasets>table>tbody>tr>td,
+#attempts>table>tbody>tr>td,
+#outputDatasets>table>tbody>tr>td,
+.trelTable th,
+.trelTable>tbody>tr>td .taskSelectEach,
+.trelTable>tbody>tr>td {
+    vertical-align: middle !important;
+    padding: 6px 12px;
+}
+
+.trelTable label {
+    margin-bottom: 0px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+
+.trelFatTable>tbody>tr>td,
+.trelFatTable>thead>tr>th,
+{
+vertical-align: middle;
+padding: 18px 20px;
+}
+
+.trelFatTable .trelWideCell {
+    /*width:100%;*/
+}
+
+
+.custom_form_control {
+    display: block;
+    /* width: 100%; */
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.customFormControl {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #721c24;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.customFormControl:focus {
+    outline: none;
+}
+
+/* Clearable text inputs */
+.clearable {
+    position: relative;
+    display: inline-block;
+}
+
+.clearable input[type=text] {
+    padding-right: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.clearable__clear {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    padding: 0 8px;
+    font-style: normal;
+    font-size: 2.2em;
+    user-select: none;
+    cursor: pointer;
+}
+
+.clearable input::-ms-clear {
+    /* Remove IE default X */
+    display: none;
+}
+
+.sla_report_card pre {
+    font-size: large;
+}
+
+.borderless td,
+.borderless th {
+    border: none;
+}
+
+#dataSetValidation {
+    background-color: white;
+    white-space: pre;
+    font-family: monospace;
+    margin-bottom: 3rem;
+    padding: 1rem;
+}

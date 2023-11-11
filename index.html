@@ -1,0 +1,760 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title id="title">Simple Inhouse Order</title>
+    <link rel="icon" type="image/png" href="resource/logo.svg">
+
+    <!-- Bootstrap 4 Stylesheet
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+     -->
+    <!-- Bootstrap 5 Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+        integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap Select Stylesheet -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css">
+
+    <!-- FontAwesome Icons Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/redesign.css">
+
+</head>
+
+
+<body class="expanded">
+
+    <!-- Get theme before loading JS -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            var body = document.getElementsByTagName('body')[0];
+            body.classList.add("dark-theme");
+        }
+    </script>
+
+    <div class="d-flex position-relative">
+
+        <div class="side-menu d-none d-md-flex">
+
+            <a href="#" class="nav-link d-flex d-md-none align-items-center rounded position-absolute px-3 py-4 me-4"
+                style="right: -80px; top:10px;" id="close-sidemenu">
+                <i class="fa-solid fa-xmark text-white fa-2x"></i>
+            </a>
+
+            <nav class="navbar navbar-expand-lg navbar-light justify-content-between p-4">
+
+                <div class="w-100">
+
+                    <div class="text-center w-100">
+
+                        <a class="nodecoration" href="#">
+                            <img src="resource/logo.svg" height="60">
+                            <h1 class="mt-2 fs-4 text-primary item-text" style="margin-right: 1rem;"><span
+                                    class="fw-light">Inhouse</span><span class="fw-bold">Order</span>
+                            </h1>
+                        </a>
+
+                    </div>
+
+                    <div class="w-100 mt-5" id="navbarSupportedContent">
+
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item active my-1">
+                                <a class="nav-link rounded" href="index.html">
+                                    <i class="fa-solid fa-list fa-xl"></i>
+                                    <span class="item-text">Orders</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item my-1">
+                                <a class="nav-link rounded" href="#">
+                                    <i class="fa-regular fa-building fa-xl"></i><span
+                                        class="item-text">Departments</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item my-1">
+                                <a class="nav-link rounded" href="#">
+                                    <i class="fa-regular fa-user fa-xl"></i><span class="item-text">Users</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item my-1">
+                                <a class="nav-link rounded" href="#">
+                                    <i class="fa-solid fa-circle-question fa-xl"></i><span class="item-text">Help
+                                        Center</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="w-100">
+                    <div class="bottomblock">
+
+                        <li class="nav-item" style="list-style-type: none;">
+                            <a href="#" class="nav-link rounded">
+                                <i class="fa-solid fa-gear fa-lg text-dark"></i><span class="item-text">Settings</span>
+                            </a>
+                        </li>
+
+                        <div class="theme-switch d-flex align-items-center">
+                            <input type="checkbox" id="theme-checkbox" />
+                            <div class="theme-mode-text-wrapper text-dark ms-2">
+                                <div class="theme-mode-text me-1">Dark Light</div>
+                                <div>mode</div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="item-text d-flex justify-content-between align-items-center text-dark"
+                            style="height: 30px; margin-right: 1rem;">
+                            <a href="#" class="nav-link fs-7">Privacy</a>
+                            <a href="#" class="nav-link  fs-7">Terms</a>
+                            <a href="#" class="nav-link  fs-7">Contact</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </nav>
+
+        </div>
+
+
+        <div class="main d-flex w-100 position-relative">
+
+            <div class="card-header position-fixed d-flex justify-content-between align-items-center p-md-4"
+                id="heading">
+
+                <a href="#" style="margin-left:-10px;"
+                    class="nav-link position-relative d-none d-md-flex align-items-center rounded px-3 py-4 me-4"
+                    id="toggle-sidemenu">
+                    <i class="fa-solid fa-bars-staggered text-dark fa-xl"></i>
+                </a>
+
+                <a href="#" class="nav-link d-flex d-md-none align-items-center rounded px-3 py-4 me-4"
+                    id="toggle-mobilemenu">
+                    <i class="fa-solid fa-bars text-dark fa-xl"></i>
+                </a>
+
+                <div class="d-block d-md-none me-4 px-4"></div>
+
+                <input type="text" placeholder="Search..." name="searchdata" id="searchpolls"
+                    class="rounded-pill bg-white w-100 me-2 me-md-4">
+
+                <div class="userblock d-flex justify-content-between align-items-center">
+
+                    <div class="dropdown">
+                        <a href="#"
+                            class="d-flex justify-content-between align-items-center rounded nodecoration p-3 dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="resource/userface.webp" width="50" height="50" class="rounded-circle shadow me-2">
+                            <div class="userId d-none d-lg-block">
+                                <div class="text-dark">Florin Niță</div>
+                                <div class="fs-7 text-dark fw-light">Engeneering</div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-dark ms-3"></i>
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li>
+                                <a class="dropdown-item text-dark" href="#profile">
+                                    <div class="d-lg-none text-dark fs-7">Florin Niță</div>
+                                    <i class="fa-regular fa-user text-dark me-3"></i>Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-dark" href="#mypolls">
+                                    <i class="fa-regular fa-chart-bar text-dark me-3"></i>My Data
+                                </a>
+                            </li>
+                            <hr>
+                            <li>
+                                <a class="dropdown-item text-dark" href="#">
+                                    <i class="fa-solid fa-arrow-right-from-bracket text-dark me-3"></i>Sign out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="wrapper position-relative container-fluid">
+                <div class="position-fixed left-corner-back d-none d-md-block">
+                </div>
+                <div class="position-fixed left-corner-over d-none d-md-block">
+                </div>
+
+                <div class="d-flex justify-content-start">
+                    <div class="table-settings position-relative mx-3 my-4">
+
+                        <div class="countries border border-1 p-3 rounded">
+
+                            <h4 class="mb-4 text-center text-dark">Items to order</h4>
+
+                            <div class="country-row d-flex justify-content-start align-items-center mb-3">
+
+                                <select class="selectpicker" title="Select item" aria-label="Select item" data-size="5"
+                                    data-live-search="true">
+                                    <option value="1950">Item #1950</option>
+                                    <option value="1951">Item #1951</option>
+                                    <option value="1952">Item #1952</option>
+                                    <option value="1953">Item #1953</option>
+                                    <option value="1954">Item #1954</option>
+                                    <option value="1955">Item #1955</option>
+                                    <option value="1956">Item #1956</option>
+                                    <option value="1957">Item #1957</option>
+                                    <option value="1958">Item #1958</option>
+                                    <option value="1959">Item #1959</option>
+                                    <option value="1960">Item #1960</option>
+                                    <option value="1961">Item #1961</option>
+                                    <option value="1962">Item #1962</option>
+                                    <option value="1963">Item #1963</option>
+                                    <option value="1964">Item #1964</option>
+                                    <option value="1965">Item #1965</option>
+                                    <option value="1966">Item #1966</option>
+                                    <option value="1967">Item #1967</option>
+                                    <option value="1968">Item #1968</option>
+                                    <option value="1969">Item #1969</option>
+                                    <option value="1970">Item #1970</option>
+                                    <option value="1971">Item #1971</option>
+                                    <option value="1972">Item #1972</option>
+                                    <option value="1973">Item #1973</option>
+                                    <option value="1974">Item #1974</option>
+                                    <option value="1975">Item #1975</option>
+                                    <option value="1976">Item #1976</option>
+                                    <option value="1977">Item #1977</option>
+                                    <option value="1978">Item #1978</option>
+                                    <option value="1979">Item #1979</option>
+                                    <option value="1980">Item #1980</option>
+                                    <option value="1981">Item #1981</option>
+                                    <option value="1982">Item #1982</option>
+                                    <option value="1983">Item #1983</option>
+                                    <option value="1984">Item #1984</option>
+                                    <option value="1985">Item #1985</option>
+                                    <option value="1986">Item #1986</option>
+                                    <option value="1987">Item #1987</option>
+                                    <option value="1988">Item #1988</option>
+                                    <option value="1989">Item #1989</option>
+                                    <option value="1990">Item #1990</option>
+                                    <option value="1991">Item #1991</option>
+                                    <option value="1992">Item #1992</option>
+                                    <option value="1993">Item #1993</option>
+                                    <option value="1994">Item #1994</option>
+                                    <option value="1995">Item #1995</option>
+                                    <option value="1996">Item #1996</option>
+                                    <option value="1997">Item #1997</option>
+                                    <option value="1998">Item #1998</option>
+                                    <option value="1999">Item #1999</option>
+                                    <option value="2000">Item #2000</option>
+                                    <option value="2001">Item #2001</option>
+                                    <option value="2002">Item #2002</option>
+                                    <option value="2003">Item #2003</option>
+                                    <option value="2004">Item #2004</option>
+                                    <option value="2005">Item #2005</option>
+                                    <option value="2006">Item #2006</option>
+                                    <option value="2007">Item #2007</option>
+                                    <option value="2008">Item #2008</option>
+                                    <option value="2009">Item #2009</option>
+                                    <option value="2010">Item #2010</option>
+                                    <option value="2011">Item #2011</option>
+                                    <option value="2012">Item #2012</option>
+                                    <option value="2013">Item #2013</option>
+                                    <option value="2014">Item #2014</option>
+                                    <option value="2015">Item #2015</option>
+                                    <option value="2016">Item #2016</option>
+                                    <option value="2017">Item #2017</option>
+                                    <option value="2018">Item #2018</option>
+                                    <option value="2019">Item #2019</option>
+                                    <option value="2020">Item #2020</option>
+                                    <option value="2021">Item #2021</option>
+                                    <option value="2022">Item #2022</option>
+                                    <option value="2023">Item #2023</option>
+                                    <option value="2024">Item #2024</option>
+                                    <option value="2025">Item #2025</option>
+                                    <option value="2026">Item #2026</option>
+                                    <option value="2027">Item #2027</option>
+                                    <option value="2028">Item #2028</option>
+                                    <option value="2029">Item #2029</option>
+                                    <option value="2030">Item #2030</option>
+                                </select>
+
+                                <div class="input-group ms-2">
+                                    <span class="input-group-text">Qty</span>
+                                    <input type="number" class="form-control" placeholder="1" aria-label="Percentage"
+                                        aria-describedby="basic-addon2" value="1">
+                                </div>
+
+                            </div>
+                            <div class="country-row d-flex justify-content-start align-items-center mb-3">
+
+                                <select class="selectpicker" title="Select item" aria-label="Select item" data-size="5"
+                                    data-live-search="true">
+                                    <option value="1950">Item #1950</option>
+                                    <option value="1951">Item #1951</option>
+                                    <option value="1952">Item #1952</option>
+                                    <option value="1953">Item #1953</option>
+                                    <option value="1954">Item #1954</option>
+                                    <option value="1955">Item #1955</option>
+                                    <option value="1956">Item #1956</option>
+                                    <option value="1957">Item #1957</option>
+                                    <option value="1958">Item #1958</option>
+                                    <option value="1959">Item #1959</option>
+                                    <option value="1960">Item #1960</option>
+                                    <option value="1961">Item #1961</option>
+                                    <option value="1962">Item #1962</option>
+                                    <option value="1963">Item #1963</option>
+                                    <option value="1964">Item #1964</option>
+                                    <option value="1965">Item #1965</option>
+                                    <option value="1966">Item #1966</option>
+                                    <option value="1967">Item #1967</option>
+                                    <option value="1968">Item #1968</option>
+                                    <option value="1969">Item #1969</option>
+                                    <option value="1970">Item #1970</option>
+                                    <option value="1971">Item #1971</option>
+                                    <option value="1972">Item #1972</option>
+                                    <option value="1973">Item #1973</option>
+                                    <option value="1974">Item #1974</option>
+                                    <option value="1975">Item #1975</option>
+                                    <option value="1976">Item #1976</option>
+                                    <option value="1977">Item #1977</option>
+                                    <option value="1978">Item #1978</option>
+                                    <option value="1979">Item #1979</option>
+                                    <option value="1980">Item #1980</option>
+                                    <option value="1981">Item #1981</option>
+                                    <option value="1982">Item #1982</option>
+                                    <option value="1983">Item #1983</option>
+                                    <option value="1984">Item #1984</option>
+                                    <option value="1985">Item #1985</option>
+                                    <option value="1986">Item #1986</option>
+                                    <option value="1987">Item #1987</option>
+                                    <option value="1988">Item #1988</option>
+                                    <option value="1989">Item #1989</option>
+                                    <option value="1990">Item #1990</option>
+                                    <option value="1991">Item #1991</option>
+                                    <option value="1992">Item #1992</option>
+                                    <option value="1993">Item #1993</option>
+                                    <option value="1994">Item #1994</option>
+                                    <option value="1995">Item #1995</option>
+                                    <option value="1996">Item #1996</option>
+                                    <option value="1997">Item #1997</option>
+                                    <option value="1998">Item #1998</option>
+                                    <option value="1999">Item #1999</option>
+                                    <option value="2000">Item #2000</option>
+                                    <option value="2001">Item #2001</option>
+                                    <option value="2002">Item #2002</option>
+                                    <option value="2003">Item #2003</option>
+                                    <option value="2004">Item #2004</option>
+                                    <option value="2005">Item #2005</option>
+                                    <option value="2006">Item #2006</option>
+                                    <option value="2007">Item #2007</option>
+                                    <option value="2008">Item #2008</option>
+                                    <option value="2009">Item #2009</option>
+                                    <option value="2010">Item #2010</option>
+                                    <option value="2011">Item #2011</option>
+                                    <option value="2012">Item #2012</option>
+                                    <option value="2013">Item #2013</option>
+                                    <option value="2014">Item #2014</option>
+                                    <option value="2015">Item #2015</option>
+                                    <option value="2016">Item #2016</option>
+                                    <option value="2017">Item #2017</option>
+                                    <option value="2018">Item #2018</option>
+                                    <option value="2019">Item #2019</option>
+                                    <option value="2020">Item #2020</option>
+                                    <option value="2021">Item #2021</option>
+                                    <option value="2022">Item #2022</option>
+                                    <option value="2023">Item #2023</option>
+                                    <option value="2024">Item #2024</option>
+                                    <option value="2025">Item #2025</option>
+                                    <option value="2026">Item #2026</option>
+                                    <option value="2027">Item #2027</option>
+                                    <option value="2028">Item #2028</option>
+                                    <option value="2029">Item #2029</option>
+                                    <option value="2030">Item #2030</option>
+                                </select>
+
+                                <div class="input-group ms-2">
+                                    <span class="input-group-text">Qty</span>
+                                    <input type="number" class="form-control" placeholder="1" aria-label="Percentage"
+                                        aria-describedby="basic-addon2" value="1">
+                                </div>
+
+                                <button type="button" class="btn btn-danger minbtn ms-2 removeCountryRow">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+
+                            </div>
+                            <div class="country-row d-flex justify-content-start align-items-center mb-3">
+
+                                <select class="selectpicker" title="Select item" aria-label="Select item" data-size="5"
+                                    data-live-search="true">
+                                    <option value="1950">Item #1950</option>
+                                    <option value="1951">Item #1951</option>
+                                    <option value="1952">Item #1952</option>
+                                    <option value="1953">Item #1953</option>
+                                    <option value="1954">Item #1954</option>
+                                    <option value="1955">Item #1955</option>
+                                    <option value="1956">Item #1956</option>
+                                    <option value="1957">Item #1957</option>
+                                    <option value="1958">Item #1958</option>
+                                    <option value="1959">Item #1959</option>
+                                    <option value="1960">Item #1960</option>
+                                    <option value="1961">Item #1961</option>
+                                    <option value="1962">Item #1962</option>
+                                    <option value="1963">Item #1963</option>
+                                    <option value="1964">Item #1964</option>
+                                    <option value="1965">Item #1965</option>
+                                    <option value="1966">Item #1966</option>
+                                    <option value="1967">Item #1967</option>
+                                    <option value="1968">Item #1968</option>
+                                    <option value="1969">Item #1969</option>
+                                    <option value="1970">Item #1970</option>
+                                    <option value="1971">Item #1971</option>
+                                    <option value="1972">Item #1972</option>
+                                    <option value="1973">Item #1973</option>
+                                    <option value="1974">Item #1974</option>
+                                    <option value="1975">Item #1975</option>
+                                    <option value="1976">Item #1976</option>
+                                    <option value="1977">Item #1977</option>
+                                    <option value="1978">Item #1978</option>
+                                    <option value="1979">Item #1979</option>
+                                    <option value="1980">Item #1980</option>
+                                    <option value="1981">Item #1981</option>
+                                    <option value="1982">Item #1982</option>
+                                    <option value="1983">Item #1983</option>
+                                    <option value="1984">Item #1984</option>
+                                    <option value="1985">Item #1985</option>
+                                    <option value="1986">Item #1986</option>
+                                    <option value="1987">Item #1987</option>
+                                    <option value="1988">Item #1988</option>
+                                    <option value="1989">Item #1989</option>
+                                    <option value="1990">Item #1990</option>
+                                    <option value="1991">Item #1991</option>
+                                    <option value="1992">Item #1992</option>
+                                    <option value="1993">Item #1993</option>
+                                    <option value="1994">Item #1994</option>
+                                    <option value="1995">Item #1995</option>
+                                    <option value="1996">Item #1996</option>
+                                    <option value="1997">Item #1997</option>
+                                    <option value="1998">Item #1998</option>
+                                    <option value="1999">Item #1999</option>
+                                    <option value="2000">Item #2000</option>
+                                    <option value="2001">Item #2001</option>
+                                    <option value="2002">Item #2002</option>
+                                    <option value="2003">Item #2003</option>
+                                    <option value="2004">Item #2004</option>
+                                    <option value="2005">Item #2005</option>
+                                    <option value="2006">Item #2006</option>
+                                    <option value="2007">Item #2007</option>
+                                    <option value="2008">Item #2008</option>
+                                    <option value="2009">Item #2009</option>
+                                    <option value="2010">Item #2010</option>
+                                    <option value="2011">Item #2011</option>
+                                    <option value="2012">Item #2012</option>
+                                    <option value="2013">Item #2013</option>
+                                    <option value="2014">Item #2014</option>
+                                    <option value="2015">Item #2015</option>
+                                    <option value="2016">Item #2016</option>
+                                    <option value="2017">Item #2017</option>
+                                    <option value="2018">Item #2018</option>
+                                    <option value="2019">Item #2019</option>
+                                    <option value="2020">Item #2020</option>
+                                    <option value="2021">Item #2021</option>
+                                    <option value="2022">Item #2022</option>
+                                    <option value="2023">Item #2023</option>
+                                    <option value="2024">Item #2024</option>
+                                    <option value="2025">Item #2025</option>
+                                    <option value="2026">Item #2026</option>
+                                    <option value="2027">Item #2027</option>
+                                    <option value="2028">Item #2028</option>
+                                    <option value="2029">Item #2029</option>
+                                    <option value="2030">Item #2030</option>
+                                </select>
+
+                                <div class="input-group ms-2">
+                                    <span class="input-group-text">Qty</span>
+                                    <input type="number" class="form-control" placeholder="1" aria-label="Percentage"
+                                        aria-describedby="basic-addon2" value="1">
+                                </div>
+
+                                <button type="button" class="btn btn-danger minbtn ms-2 removeCountryRow">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+
+                            </div>
+
+                            <div class="text-center">
+                                <button type="button" class="btn btn-secondary py-2 px-4" id="addCountryRow">
+                                    <i class="fa-solid fa-plus fa-lg"></i><span class="item-text ms-3">Add another
+                                        item</span>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="py-4">
+                            <button type="button" class="btn otherBtn w-100 shadow" id="sendOrder">
+                                <i class="fa-regular fa-floppy-disk fa-lg me-3"></i>
+                                <span class="item-text fw-bold">SAVE ORDER</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="flex-grow-1 p-4">
+
+
+                        <div class="d-flex justify-content-between rounded border border-1 p-2 mb-4">
+
+                            <button type="button" class="btn btn-light py-1 px-3">
+                                <i class="fa-solid fa-print"></i><span class="item-text ms-3">Print selected</span>
+                            </button>
+
+                            <div class="dropdown">
+                                <a href="#"
+                                    class="btn btn-light py-1 px-3 d-flex justify-content-between align-items-center nodecoration dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="item-text">Download selected</span>
+                                    <i class="fa-solid fa-chevron-down text-dark ms-3"></i>
+                                </a>
+                                <ul class="dropdown-menu shadow" style="min-width: 150px;">
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="#">
+                                            <i class="fa-solid fa-file-excel text-dark me-3"></i>XLS
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="#">
+                                            <i class="fa-solid fa-file-csv text-dark me-3"></i>CSV
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="#">
+                                            <i class="fa-regular fa-file-pdf text-dark me-3"></i>PDF
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="tables-wrapper">
+
+                            <h5 class="mb-3 text-dark">All Orders</h5>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover align-middle mb-5">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"><input class="form-check-input selectallcheckbox"
+                                                    type="checkbox"></th>
+                                            <th scope="col">Order ID</th>
+                                            <th scope="col">Timestamp</th>
+                                            <th scope="col">Department</th>
+                                            <th scope="col">Urgency</th>
+                                            <th scope="col">Items</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row"><input class="form-check-input" type="checkbox"></td>
+                                            <td>533300</td>
+                                            <td> 11.06.2023 at 03:50 PM </td>
+                                            <td> Finance </td>
+                                            <td> Normal </td>
+                                            <td>
+                                                520 x Item #1950<br>
+                                                100 x Item #1983<br>
+                                                29 x Item #1961
+                                            </td>
+                                            <td> Ongoing </td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row"><input class="form-check-input" type="checkbox"></td>
+                                            <td>558936</td>
+                                            <td> 09.02.2023 at 01:20 PM </td>
+                                            <td> Engeneering </td>
+                                            <td> Normal </td>
+                                            <td>
+                                                50 x Item #1990<br>
+                                                10 x Item #1980
+                                            </td>
+                                            <td> Done </td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row"><input class="form-check-input" type="checkbox"></td>
+                                            <td>584572</td>
+                                            <td> 04.22.2023 at 9:50 AM</td>
+                                            <td> Finance </td>
+                                            <td class="text-danger"> Urgent </td>
+                                            <td>
+                                                21 x Item #2010
+                                            </td>
+                                            <td> Done </td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row"><input class="form-check-input" type="checkbox"></td>
+                                            <td>598772</td>
+                                            <td> 01.30.2023 at 11:10 AM </td>
+                                            <td> Logistics </td>
+                                            <td> Normal </td>
+                                            <td>
+                                                520 x Item #1950<br>
+                                                100 x Item #1983<br>
+                                                29 x Item #1961<br>
+                                                90 x Item #1965
+                                            </td>
+                                            <td> Done </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <script>
+                            if (localStorage.getItem('theme') === 'dark') {
+                                const mytables = document.getElementsByClassName('table');
+                                var len = mytables !== null ? mytables.length : 0;
+                                var i = 0;
+                                for (i; i < len; i++) {
+                                    mytables[i].className += " table-dark";
+                                }
+                            }
+                        </script>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <style>
+        .country-flag {
+            height: 20px;
+            margin-right: 10px;
+            margin-top: -5px;
+        }
+
+        .bootstrap-select .dropdown-menu {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15) !important;
+        }
+
+        .input-group {
+            width: 130px;
+            border-radius: 0.375rem;
+        }
+
+        .input-group input {
+            background-color: #f8f9fa;
+        }
+
+        .input-group-text {
+            background-color: #f8f9fa;
+            border: none;
+            padding: 0.375rem;
+        }
+
+        .minbtn {
+            height: 30px;
+            width: 30px;
+            border-radius: 30px !important;
+            padding: 0;
+        }
+
+        .age-text text-dark {
+            text-align: center;
+            width: 60px;
+        }
+
+        .dropdown-item.active,
+        .dropdown-item:active {
+            color: #fff !important;
+            border-radius: 0.4rem;
+        }
+
+        .age-row input,
+        .country-row input {
+            text-align: end;
+            padding: 0;
+        }
+
+        .dropdown input {
+            text-align: start;
+        }
+
+        .table-settings button {
+            border: none;
+        }
+
+        .btn {
+            border: none;
+        }
+
+        .country-row .dropdown {
+            flex-grow: 1;
+        }
+
+        .form-check-input[type=checkbox] {
+            padding: 0.6rem;
+        }
+    </style>
+
+
+    <script>
+        (function ($) {
+            $('select').selectpicker();
+        });
+    </script>
+
+
+    <!-- jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha512-ToL6UYWePxjhDQKNioSi4AyJ5KkRxY+F1+Fi7Jgh0Hp5Kk2/s8FD7zusJDdonfe5B00Qw+B8taXxF6CFLnqNCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Bootstrap Select JavaScript -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+
+    <!-- Main Javascript File -->
+    <script src="js/main.js"></script>
+
+    <!-- Javascript File for this page
+    <script src="js/explore.js"></script>
+     -->
+
+</body>
+
+</html>
